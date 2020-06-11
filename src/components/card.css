@@ -6,7 +6,7 @@
     /* width: 10px; */
     /* color: rgb(255, 255, 255); */
     /* background-image: linear-gradient(120deg,#e57373 0%, #e57373     100%); */
-    background-color: #f1f1f1 ;
+    background-color: #d1cece ;
     border-radius: 0px;
     border: 1px solid #061b3d ;
   }
@@ -22,3 +22,12 @@
   .container1 {
     padding: 2px 16px;
   }
+
+  div2 { 
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100%;
+  }
+  

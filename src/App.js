@@ -6,8 +6,9 @@ import MainData from './components/MainData'
 
 function App() {
   return (
-    <div className="">
+    <div className="" style={{backgroundColor: ""}}>
       <MainData/>
+      
     </div>
   );
 }
