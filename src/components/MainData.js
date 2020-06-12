@@ -9,9 +9,14 @@ import graph from '../img/graph.gif'
 import Tdeath from '../img/Tdeath.gif'
 import active from '../img/active.gif'
 import tot from '../img/tot.gif'
+import district_heatmap from '../img/district_heatmap.png'
+
+import Hospital from './Hospital'
+import Globle from './Globle'
 
 import Header from './Header'
 import SLData from './OtherDataSL'
+import PCRChart from './ChartSL'
 
 
 export class MainData extends Component {
@@ -27,6 +32,7 @@ export class MainData extends Component {
              totalCases: "",
              totalDeaths: "",
              activeCases: "",
+             lastUpdate: "",
         }
     }
 
@@ -42,6 +48,7 @@ export class MainData extends Component {
                 totalCases : response.data.data.local_total_cases,
                 totalDeaths: response.data.data.local_deaths,
                 activeCases: response.data.data.local_active_cases,
+                lastUpdate: response.data.data.update_date_time,
          })
          console.log('new',this.state.newCases);
         })
@@ -52,10 +59,29 @@ export class MainData extends Component {
     render() {
         return (
             <div>
-            <div style={{marginTop: "2%"}}>
+            <div style={{marginTop: "1%"}}>
                 <div className="" style={{marginLeft: "1%", marginRight: "1%"}}>
-                    <div className="border border-primary" style={{backgroundColor: "#595454", opacity: "0.9"}}>
-                    <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%"}}>
+                    <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "1%", color: "#ffffff",textAlign: "center"}}>
+                        <h1>COVID-19 : Live Situational Analysis Dashboard of Sri Lanka</h1>
+                    </div>
+
+                    <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "2%", color: "#ffffff",textAlign: "center"}}>
+                    Last updated at: {this.state.lastUpdate}
+                    </div>
+
+                    <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1", marginBottom: "2%",}}>
+
+                    {/* <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%", color: "#ffffff", textAlign: "center"}}>
+                        <h3>ftewt</h3>
+                    </div> */}
+
+<div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%"}}>
+                <div className="col-md" style={{color: "#ffffff", textAlign: "center"}}>
+                <h3>Sri Lanka Figures<hr color= "#ffffff"/> </h3>
+                </div>
+                </div>
+
+                    <div className="row" style={{marginTop: "0%", marginLeft: "1%", marginRight: "1%"}}>
                       
                         <div className="col-md-3">
                             <div className="card1">
@@ -135,7 +161,7 @@ export class MainData extends Component {
 
                     </div>
 
-                    <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%"}}>
+                    <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%", marginBottom: "0%"}}>
                         <div className="col-md-3">
                             <div className="card1">
                                 <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
@@ -211,12 +237,103 @@ export class MainData extends Component {
                                 </div>
                             </div>
                         </div>
+                        
 
                     </div>
+                    <div className="row" style={{marginTop: "0%", marginLeft: "1%", marginRight: "1%"}}>
+                <div className="col-md" style={{color: "#ffffff", textAlign: "center"}}>
+                Last updated at: {this.state.lastUpdate} <hr color= "#ffffff"/>
+                </div>
+                </div>
                     </div>
 
 
                     {/* <SLData/> */}
+
+                    {/* <div className="row">
+                        <div className="col-md">
+                        <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "1%", color: "#ffffff",textAlign: "center"}}>
+                        <PCRChart/>
+                    </div>
+                            </div>
+                            <div className="col-md" style={{backgroundColor: "#223561", color: "", textAlign: "center"}}>
+                            <img src={district_heatmap} width="50%"/>
+                            </div>
+                        </div> */}
+
+                        <div>
+                            <Globle/>
+                            </div>
+
+                            <div>
+                            <div className="border border-primary" style={{backgroundColor: "#", opacity: "1",marginBottom: "2%", color: "#000000",textAlign: "center"}}>
+                
+                <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%", marginBottom: "1%"}}>
+                      
+                <div className="col-md-4">
+                            <div className="card1">
+                                <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
+                                    <div className="row">
+                                        
+                                        <div className="col" style={{textAlign: "center"}}>
+                                            <h5><b>New Cases<br/>
+                                            <div style={{backgroundColor: "#0099CC", color:"white"}}>
+                                                <font size="6">{this.state.global_new_cases}</font>
+                                            </div>
+                                            </b></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-md-4">
+                            <div className="card1">
+                                <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
+                                    <div className="row">
+                                        
+                                        <div className="col" style={{textAlign: "center"}}>
+                                            <h5><b>New Cases<br/>
+                                            <div style={{backgroundColor: "#0099CC", color:"white"}}>
+                                                <font size="6">{this.state.global_new_cases}</font>
+                                            </div>
+                                            </b></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-md-4">
+                            <div className="card1">
+                                <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
+                                    <div className="row">
+                                        
+                                        <div className="col" style={{textAlign: "center"}}>
+                                            <h5><b>New Cases<br/>
+                                            <div style={{backgroundColor: "#0099CC", color:"white"}}>
+                                                <font size="6">{this.state.global_new_cases}</font>
+                                            </div>
+                                            </b></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                    </div>
+                            </div>
+
+
+                        <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "2%", color: "#ffffff",textAlign: "center"}}>
+                        © 2020 Digitally Crafted by RAVINDU ENTERPRISES &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Source: <a href="https://hpb.health.gov.lk/en/api-documentation">www.hpb.health.gov.lk</a>
+                    </div>
+
+                    
+
                 </div>
             </div>
             </div>
