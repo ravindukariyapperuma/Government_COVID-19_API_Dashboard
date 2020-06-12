@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './card.css';
 
-export class Hospital extends Component {
+export class pcrData extends Component {
     constructor(props) {
         super(props)
     
@@ -14,11 +14,11 @@ export class Hospital extends Component {
     componentDidMount(){
         axios.get('https://hpb.health.gov.lk/api/get-current-statistical')
         .then(response=>{
-          console.log(response.data.data.hospital_data);
+          console.log(response.data.data.daily_pcr_testing_data);
 
             this.setState({
                 
-                data :  response.data.data.hospital_data.map(data=>data),
+                data :  response.data.data.daily_pcr_testing_data.map(data=>data),
          })
          console.log('data',this.state.data);
         })
@@ -31,7 +31,7 @@ export class Hospital extends Component {
                 <div style={{marginTop: "1%"}}>
                 <div className="" style={{marginLeft: "1%", marginRight: "1%"}}>
                     <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "1%",marginTop: "0%", color: "#ffffff",textAlign: "center"}}>
-                        <h1> <i class="fa fa-hospital fa-md"></i> Sri Lankan hospitals overview</h1>
+                        <h1> <i class="fa fa-flask fa-md"></i> Sri Lankan PCR testing data</h1>
                     </div>
                 </div>
                 </div>
@@ -40,28 +40,20 @@ export class Hospital extends Component {
                 <div className="row" style={{marginTop: "0%", marginLeft: "1%", marginRight: "1%"}}>
                 {this.state.data.map(data => (
                       
-                      <div className="col-md-4">
+                      <div className="col-md-3">
                           <div className="card1">
                               <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
                                   <div className="row">
                                   
                                       
                                       <div className="col" style={{textAlign: "center"}}>
-                                          <b>{data.hospital.name}<br/>{data.hospital.name_si}
+                                          <b>Date: {data.date}
                                           <div style={{backgroundColor: "#0099CC", color:"white", marginTop: "1%"}}>
-                                              &nbsp; <font size="4">Treatment Local: {data.treatment_local}</font>
+                                              &nbsp; <font size="4">Count: {data.count}</font>
                                           </div>
-                                          <div style={{backgroundColor: "#ff4444", color:"white" , marginTop: "1%"}}>
-                                              &nbsp; <font size="4">Treatment Foreign: {data.treatment_foreign}</font>
-                                          </div>
-                                          <div style={{backgroundColor: "#FF8800", color:"white", marginTop: "1%"}}>
-                                              &nbsp; <font size="4">Cumulative Local: {data.cumulative_local}</font>
-                                          </div>
-                                          <div style={{backgroundColor: "#00C851", color:"white", marginTop: "1%"}}>
-                                              &nbsp; <font size="4">Cumulative Foreign: {data.cumulative_foreign}</font>
-                                          </div>
+                                          
                                           </b>
-                                                    Last Update: {data.created_at}
+                                            
                                       </div>
                                       
                                   </div>
@@ -82,4 +74,4 @@ export class Hospital extends Component {
     }
 }
 
-export default Hospital
+export default pcrData

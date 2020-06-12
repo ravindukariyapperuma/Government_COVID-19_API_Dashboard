@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './card.css';
 import axios from 'axios'
+import  { Redirect, Link } from 'react-router-dom'
 import newcases from '../img/search.gif'
 import pluse from '../img/pluse.gif'
 import pluz from '../img/pulz.gif'
@@ -10,6 +11,8 @@ import Tdeath from '../img/Tdeath.gif'
 import active from '../img/active.gif'
 import tot from '../img/tot.gif'
 import district_heatmap from '../img/district_heatmap.png'
+import lanka from '../img/lanka.gif'
+import world from '../img/world.gif'
 
 import Hospital from './Hospital'
 import Globle from './Globle'
@@ -17,6 +20,7 @@ import Globle from './Globle'
 import Header from './Header'
 import SLData from './OtherDataSL'
 import PCRChart from './ChartSL'
+import pcrData from './pcrData'
 
 
 export class MainData extends Component {
@@ -65,9 +69,9 @@ export class MainData extends Component {
                         <h1>COVID-19 : Live Situational Analysis Dashboard of Sri Lanka</h1>
                     </div>
 
-                    <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "2%", color: "#ffffff",textAlign: "center"}}>
+                    {/* <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "2%", color: "#ffffff",textAlign: "center"}}>
                     Last updated at: {this.state.lastUpdate}
-                    </div>
+                    </div> */}
 
                     <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1", marginBottom: "2%",}}>
 
@@ -77,7 +81,7 @@ export class MainData extends Component {
 
 <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%"}}>
                 <div className="col-md" style={{color: "#ffffff", textAlign: "center"}}>
-                <h3>Sri Lanka Figures<hr color= "#ffffff"/> </h3>
+                <h3><img src={lanka} width="50px"/> Sri Lanka Figures<hr color= "#ffffff"/> </h3>
                 </div>
                 </div>
 
@@ -271,57 +275,57 @@ export class MainData extends Component {
                 <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%", marginBottom: "1%"}}>
                       
                 <div className="col-md-4">
-                            <div className="card1">
+                <Link to={'/Hospital'}>
+                                <button class="button button2">
                                 <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
                                     <div className="row">
                                         
                                         <div className="col" style={{textAlign: "center"}}>
-                                            <h5><b>New Cases<br/>
-                                            <div style={{backgroundColor: "#0099CC", color:"white"}}>
-                                                <font size="6">{this.state.global_new_cases}</font>
-                                            </div>
+                                            <h5><i class="fa fa-hospital fa-lg"></i><br/><b>Sri Lankan hospitals overview
+                                            
                                             </b></h5>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </button>
+                                </Link>
                         </div>
 
                         <div className="col-md-4">
-                            <div className="card1">
+                        <Link to={'/pcrData'}>
+                        <button class="button button2">
                                 <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
                                     <div className="row">
                                         
                                         <div className="col" style={{textAlign: "center"}}>
-                                            <h5><b>New Cases<br/>
-                                            <div style={{backgroundColor: "#0099CC", color:"white"}}>
-                                                <font size="6">{this.state.global_new_cases}</font>
-                                            </div>
+                                            <h5><i class="fa fa-flask fa-lg"></i><br/><b>&nbsp;Sri Lankan PCR testing data &nbsp;<br/>
+                                            
                                             </b></h5>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </button>
+                                </Link>
                         </div>
 
                         <div className="col-md-4">
-                            <div className="card1">
+                        <button class="button button2">
                                 <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
                                     <div className="row">
                                         
                                         <div className="col" style={{textAlign: "center"}}>
-                                            <h5><b>New Cases<br/>
-                                            <div style={{backgroundColor: "#0099CC", color:"white"}}>
-                                                <font size="6">{this.state.global_new_cases}</font>
-                                            </div>
+                                            <h5><i class="fa fa-file fa-lg"></i><br/><b>&nbsp;&nbsp; Sri Lanka data distribution &nbsp;&nbsp;<br/>
+                                            
                                             </b></h5>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </button>
                         </div>
 
                     </div>
+
+                    
                     
 
                     </div>

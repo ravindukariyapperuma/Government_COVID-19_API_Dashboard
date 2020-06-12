@@ -30,4 +30,19 @@
     background-position: center; 
     background-size: 100%;
   }
+
+  .button2 {
+    background-color: #223561; 
+    color: rgb(255, 255, 255); /*#008CBA */
+    width: "100%";
+    padding: 2% 10%;
+    border: 2px solid rgb(255, 255, 255);
+  }
+  
+  .button2:hover {
+    background-color: rgb(229, 233, 245);
+    color: #223561;
+    border: 2px solid rgb(117, 64, 185);
+  }
+  
   

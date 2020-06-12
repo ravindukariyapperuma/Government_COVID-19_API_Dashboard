@@ -11,6 +11,7 @@ import Tdeath from '../img/Tdeath.gif'
 import active from '../img/active.gif'
 import tot from '../img/tot.gif'
 import district_heatmap from '../img/district_heatmap.png'
+import world from '../img/world.gif'
 
 export class Globle extends Component {
 
@@ -52,7 +53,7 @@ export class Globle extends Component {
                 <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "2%", color: "#000000",textAlign: "center"}}>
                 <div className="row" style={{marginTop: "1%", marginLeft: "1%", marginRight: "1%"}}>
                 <div className="col-md" style={{color: "#ffffff"}}>
-                <h3>Global Figures</h3> <hr color= "#ffffff"/>
+                <h3><img src={world} width="40px"/> Global Figures</h3> <hr color= "#ffffff"/>
                 </div>
                 </div>
                 <div className="row" style={{marginTop: "0%", marginLeft: "1%", marginRight: "1%", marginBottom: "0%"}}>
