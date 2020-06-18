@@ -19,7 +19,7 @@ import Globle from './Globle'
 
 import Header from './Header'
 import SLData from './OtherDataSL'
-import PCRChart from './ChartSL'
+import ChartSL from './ChartSL'
 import pcrData from './pcrData'
 
 
@@ -57,6 +57,10 @@ export class MainData extends Component {
          console.log('new',this.state.newCases);
         })
     
+    }
+
+    formatNumber (num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
     }
     
 
@@ -97,7 +101,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>New Cases<br/>
                                             <div style={{backgroundColor: "#0099CC", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.newCases}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.newCases)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -116,7 +120,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>New Deaths<br/>
                                             <div style={{backgroundColor: "#ff4444", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.newDeaths}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.newDeaths)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -135,7 +139,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>Hospitalized<br/>
                                             <div style={{backgroundColor: "#FF8800", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.hospitalized}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.hospitalized)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -154,7 +158,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>Recoveries<br/>
                                             <div style={{backgroundColor: "#00C851", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.recoveries}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.recoveries)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -176,7 +180,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>Total Cases<br/>
                                             <div style={{backgroundColor: "#ffa726", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.totalCases}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.totalCases)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -195,7 +199,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>Total Deaths<br/>
                                             <div style={{backgroundColor: "#8d6e63", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.totalDeaths}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.totalDeaths)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -214,7 +218,7 @@ export class MainData extends Component {
                                         <div className="col" style={{textAlign: "left"}}>
                                             <h5><b>Active Cases<br/>
                                             <div style={{backgroundColor: "#59698d", color:"white"}}>
-                                                &nbsp; <font size="6">{this.state.activeCases}</font>
+                                                &nbsp; <font size="6">{this.formatNumber(this.state.activeCases)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -309,6 +313,7 @@ export class MainData extends Component {
                         </div>
 
                         <div className="col-md-4">
+                        <Link to={'/ChartSL'}>
                         <button class="button button2">
                                 <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
                                     <div className="row">
@@ -321,6 +326,7 @@ export class MainData extends Component {
                                     </div>
                                 </div>
                             </button>
+                            </Link>
                         </div>
 
                     </div>
@@ -333,7 +339,7 @@ export class MainData extends Component {
 
 
                         <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "2%", color: "#ffffff",textAlign: "center"}}>
-                        © 2020 Digitally Crafted by RAVINDU ENTERPRISES &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Source: <a href="https://hpb.health.gov.lk/en/api-documentation">www.hpb.health.gov.lk</a>
+                        © 2020 Digitally Crafted by RAVINDU LAKSHAN KARIYAPPERUMA &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Source: <a href="https://hpb.health.gov.lk/en/api-documentation">www.hpb.health.gov.lk</a>
                     </div>
 
                     

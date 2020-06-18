@@ -6,6 +6,7 @@ import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import MainData from './components/MainData'
 import Hospital from './components/Hospital'
 import pcrData from './components/pcrData'
+import ChartSL from './components/ChartSL'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
       <Switch>
      
+      <Route path = {'/ChartSL'} exact component={ChartSL}/>
       <Route path = {'/pcrData'} exact component={pcrData}/>
       <Route path = {'/Hospital'} exact component={Hospital}/>
       <Route path = {'/'} exact component={MainData}/>

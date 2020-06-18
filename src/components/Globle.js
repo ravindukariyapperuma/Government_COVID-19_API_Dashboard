@@ -45,6 +45,10 @@ export class Globle extends Component {
         })
     
     }
+
+    formatNumber (num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
     
 
     render() {
@@ -66,7 +70,7 @@ export class Globle extends Component {
                                         <div className="col" style={{textAlign: "center"}}>
                                             <h5><b>New Cases<br/>
                                             <div style={{backgroundColor: "#0099CC", color:"white"}}>
-                                                <font size="6">{this.state.global_new_cases}</font>
+                                                <font size="6">{this.formatNumber(this.state.global_new_cases)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -83,7 +87,7 @@ export class Globle extends Component {
                                         <div className="col" style={{textAlign: "center"}}>
                                             <h5><b>New Deaths<br/>
                                             <div style={{backgroundColor: "#ff4444", color:"white"}}>
-                                                <font size="6">{this.state.global_new_deaths}</font>
+                                                <font size="6">{this.formatNumber(this.state.global_new_deaths)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -100,7 +104,7 @@ export class Globle extends Component {
                                         <div className="col" style={{textAlign: "center"}}>
                                             <h5><b>Total Cases<br/>
                                             <div style={{backgroundColor: "#FF8800", color:"white"}}>
-                                                <font size="6">{this.state.global_total_cases}</font>
+                                                <font size="6">{this.formatNumber(this.state.global_total_cases)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -117,7 +121,7 @@ export class Globle extends Component {
                                         <div className="col" style={{textAlign: "center"}}>
                                             <h5><b>Total Deaths<br/>
                                             <div style={{backgroundColor: "#8d6e63", color:"white"}}>
-                                                <font size="6">{this.state.global_deaths}</font>
+                                                <font size="6">{this.formatNumber(this.state.global_deaths)}</font>
                                             </div>
                                             </b></h5>
                                         </div>
@@ -134,7 +138,7 @@ export class Globle extends Component {
                                         <div className="col" style={{textAlign: "center"}}>
                                             <h5><b>Recoveries<br/>
                                             <div style={{backgroundColor: "#00C851", color:"white"}}>
-                                                <font size="6">{this.state.global_recovered}</font>
+                                                <font size="6">{this.formatNumber(this.state.global_recovered)}</font>
                                             </div>
                                             </b></h5>
                                         </div>

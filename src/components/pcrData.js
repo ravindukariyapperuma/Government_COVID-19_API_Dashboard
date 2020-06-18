@@ -24,6 +24,10 @@ export class pcrData extends Component {
         })
     
     }
+
+    formatNumber (num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
     
     render() {
         return (
@@ -38,7 +42,7 @@ export class pcrData extends Component {
 
 
                 <div className="row" style={{marginTop: "0%", marginLeft: "1%", marginRight: "1%"}}>
-                {this.state.data.map(data => (
+                {this.state.data.reverse().map(data => (
                       
                       <div className="col-md-3">
                           <div className="card1">
@@ -49,7 +53,7 @@ export class pcrData extends Component {
                                       <div className="col" style={{textAlign: "center"}}>
                                           <b>Date: {data.date}
                                           <div style={{backgroundColor: "#0099CC", color:"white", marginTop: "1%"}}>
-                                              &nbsp; <font size="4">Count: {data.count}</font>
+                                              &nbsp; <font size="4">Count: {this.formatNumber(data.count)}</font>
                                           </div>
                                           
                                           </b>
