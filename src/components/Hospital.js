@@ -48,16 +48,16 @@ export class Hospital extends Component {
                                       
                                       <div className="col" style={{textAlign: "center"}}>
                                           <b>{data.hospital.name}<br/>{data.hospital.name_si}
-                                          <div style={{backgroundColor: "#0099CC", color:"white", marginTop: "1%"}}>
+                                          <div style={{backgroundColor: "#5c6bc0", color:"white", marginTop: "1%"}}>
                                               &nbsp; <font size="4">Treatment Local: {data.treatment_local}</font>
                                           </div>
-                                          <div style={{backgroundColor: "#ff4444", color:"white" , marginTop: "1%"}}>
+                                          <div style={{backgroundColor: "#039be5", color:"white" , marginTop: "1%"}}>
                                               &nbsp; <font size="4">Treatment Foreign: {data.treatment_foreign}</font>
                                           </div>
-                                          <div style={{backgroundColor: "#FF8800", color:"white", marginTop: "1%"}}>
+                                          <div style={{backgroundColor: "#5c6bc0", color:"white", marginTop: "1%"}}>
                                               &nbsp; <font size="4">Cumulative Local: {data.cumulative_local}</font>
                                           </div>
-                                          <div style={{backgroundColor: "#00C851", color:"white", marginTop: "1%"}}>
+                                          <div style={{backgroundColor: "#039be5", color:"white", marginTop: "1%"}}>
                                               &nbsp; <font size="4">Cumulative Foreign: {data.cumulative_foreign}</font>
                                           </div>
                                           </b>

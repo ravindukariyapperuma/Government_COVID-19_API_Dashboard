@@ -7,7 +7,8 @@ export class pcrData extends Component {
         super(props)
     
         this.state = {
-            data: [],
+            total_pcr_testing_count: '',
+            pcrdata: [],
         }
     }
 
@@ -17,10 +18,10 @@ export class pcrData extends Component {
           console.log(response.data.data.daily_pcr_testing_data);
 
             this.setState({
-                
-                data :  response.data.data.daily_pcr_testing_data.map(data=>data),
+                total_pcr_testing_count : response.data.data.total_pcr_testing_count,
+                pcrdata :  response.data.data.daily_pcr_testing_data.map(data=>data),
          })
-         console.log('data',this.state.data);
+         console.log('data',this.state.pcrdata);
         })
     
     }
@@ -37,12 +38,15 @@ export class pcrData extends Component {
                     <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "1%",marginTop: "0%", color: "#ffffff",textAlign: "center"}}>
                         <h1> <i class="fa fa-flask fa-md"></i> Sri Lankan PCR testing data</h1>
                     </div>
+                    <div className="border border-primary" style={{backgroundColor: "#223561", opacity: "1",marginBottom: "1%",marginTop: "0%", color: "#ffffff",textAlign: "center"}}>
+                        <h3>Total PCR Testing Count: {this.formatNumber(this.state.total_pcr_testing_count)}</h3>
+                    </div>
                 </div>
                 </div>
 
 
                 <div className="row" style={{marginTop: "0%", marginLeft: "1%", marginRight: "1%"}}>
-                {this.state.data.reverse().map(data => (
+                {this.state.pcrdata.reverse().map(data => (
                       
                       <div className="col-md-3">
                           <div className="card1">

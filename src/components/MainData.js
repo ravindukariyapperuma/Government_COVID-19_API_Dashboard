@@ -19,7 +19,7 @@ import Globle from './Globle'
 
 import Header from './Header'
 import SLData from './OtherDataSL'
-import ChartSL from './ChartSL'
+import Map from './Map'
 import pcrData from './pcrData'
 
 
@@ -285,7 +285,7 @@ export class MainData extends Component {
                                     <div className="row">
                                         
                                         <div className="col" style={{textAlign: "center"}}>
-                                            <h5><i class="fa fa-hospital fa-lg"></i><br/><b>Sri Lankan hospitals overview
+                                            <h5><i class="fa fa-hospital fa-lg"></i><br/><b>&nbsp;&nbsp;Sri Lankan hospitals overview&nbsp;&nbsp;
                                             
                                             </b></h5>
                                         </div>
@@ -302,7 +302,7 @@ export class MainData extends Component {
                                     <div className="row">
                                         
                                         <div className="col" style={{textAlign: "center"}}>
-                                            <h5><i class="fa fa-flask fa-lg"></i><br/><b>&nbsp;Sri Lankan PCR testing data &nbsp;<br/>
+                                            <h5><i class="fa fa-flask fa-lg"></i><br/><b>&nbsp;&nbsp;&nbsp;Sri Lankan PCR testing data &nbsp;&nbsp;&nbsp;<br/>
                                             
                                             </b></h5>
                                         </div>
@@ -313,13 +313,13 @@ export class MainData extends Component {
                         </div>
 
                         <div className="col-md-4">
-                        <Link to={'/ChartSL'}>
+                        <Link to={'/Map'}>
                         <button class="button button2">
                                 <div style={{marginTop: "3%", marginBottom: "2%", marginLeft: "%"}}>
                                     <div className="row">
                                         
                                         <div className="col" style={{textAlign: "center"}}>
-                                            <h5><i class="fa fa-file fa-lg"></i><br/><b>&nbsp;&nbsp; Sri Lanka data distribution &nbsp;&nbsp;<br/>
+                                            <h5><i class="fa fa-map fa-lg"></i><br/><b>Testing and Quarantine Centers<br/>
                                             
                                             </b></h5>
                                         </div>

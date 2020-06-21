@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Chart from './ChartSL'
+import Chart from './Map'
 import axios from 'axios'
 import './card.css';
 import totalcases from '../img/healthcheck.png'
